@@ -1,0 +1,5 @@
+name: "github-action-go"
+description: "Build application"
+runs:
+  using: docker
+  image: Dockerfile
