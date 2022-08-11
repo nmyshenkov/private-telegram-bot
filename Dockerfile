@@ -10,7 +10,7 @@ RUN go build -o main .
 
 FROM alpine:latest
 COPY --from=builder /app/main /app/main
-COPY --from=builder /app/config.yaml /app/config.json
+COPY --from=builder /app/config.json /app/config.json
 WORKDIR /app
 
-ENTRYPOINT ./main -c config.yaml
+ENTRYPOINT ./main -c config.json
