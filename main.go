@@ -2,9 +2,10 @@ package main
 
 import (
 	"flag"
+	"log"
+
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 	"github.com/nmyshenkov/private-telegram-bot/config"
-	"log"
 )
 
 func main() {
@@ -48,5 +49,4 @@ func main() {
 			}
 		}
 	}
-
 }

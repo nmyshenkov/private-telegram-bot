@@ -3,7 +3,7 @@ package config
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"os"
 )
 
 type Config struct {
@@ -27,7 +27,7 @@ func (cfg *Config) Validate() error {
 // ParseFromFile читает файл конфигурации с диска и загружает его содержимое
 // в структуру конфига приложения. Поддерживаются файлы в формате YAML и JSON.
 func (cfg *Config) ParseFromFile(name string) error {
-	file, err := ioutil.ReadFile(name)
+	file, err := os.ReadFile(name)
 	if err != nil {
 		return fmt.Errorf("read file: %w", err)
 	}
